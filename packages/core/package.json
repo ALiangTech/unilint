@@ -1,0 +1,34 @@
+{
+  "name": "core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.cjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "unbuild": {
+    "failOnWarn": false
+  },
+  "bin": {
+    "un": "./bin/un.js"
+  },
+  "scripts": {
+    "json": "node ./src/config/index.mjs",
+    "build": "pnpm run json && unbuild"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^10.0.1",
+    "inquirer": "^8.0.0",
+    "progress": "^2.0.3",
+    "read-package-json": "^6.0.4"
+  },
+  "devDependencies": {
+    "glob": "^10.2.7"
+  }
+}

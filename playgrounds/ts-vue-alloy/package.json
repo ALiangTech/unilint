@@ -1,0 +1,74 @@
+{
+    "name": "ts-vue-alloy",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vue-tsc && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "vue": "^3.2.47"
+    },
+    "devDependencies": {
+        "@typescript-eslint/parser": "^5.59.11",
+        "@vitejs/plugin-vue": "^4.1.0",
+        "eslint": "^8.42.0",
+        "eslint-config-alloy": "^5.0.0",
+        "typescript": "^5.0.2",
+        "vite": "^4.3.9",
+        "vue-eslint-parser": "^9.3.1",
+        "vue-tsc": "^1.4.2"
+    },
+    "editConfig": {
+        "root": true,
+        "env": {
+            "browser": true,
+            "node": true
+        },
+        "parserOptions": {
+            "ecmaVersion": 2021,
+            "sourceType": "module"
+        },
+        "extends": [
+            "eslint:recommended",
+            "plugin:@typescript-eslint/recommended",
+            "plugin:vue/vue3-recommended"
+        ],
+        "plugins": [
+            "@typescript-eslint",
+            "vue"
+        ],
+        "rules": {},
+        "overrides": [
+            {
+                "files": [
+                    "*.ts",
+                    "*.tsx"
+                ],
+                "parser": "@typescript-eslint/parser",
+                "parserOptions": {
+                    "ecmaVersion": 2021,
+                    "sourceType": "module",
+                    "project": "./tsconfig.json"
+                }
+            },
+            {
+                "files": [
+                    "*.vue"
+                ],
+                "parser": "vue-eslint-parser",
+                "parserOptions": {
+                    "parser": "@typescript-eslint/parser",
+                    "ecmaVersion": 2021,
+                    "sourceType": "module",
+                    "project": "./tsconfig.json",
+                    "extraFileExtensions": [
+                        ".vue"
+                    ]
+                }
+            }
+        ]
+    }
+}
