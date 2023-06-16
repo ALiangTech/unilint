@@ -12,63 +12,62 @@
         "vue": "^3.2.47"
     },
     "devDependencies": {
+        "@babel/core": "^7.22.5",
+        "@babel/eslint-parser": "^7.22.5",
+        "@typescript-eslint/eslint-plugin": "^5.59.11",
         "@typescript-eslint/parser": "^5.59.11",
         "@vitejs/plugin-vue": "^4.1.0",
+        "@vue/eslint-config-typescript": "^11.0.3",
         "eslint": "^8.42.0",
         "eslint-config-alloy": "^5.0.0",
+        "eslint-plugin-vue": "^9.14.1",
         "typescript": "^5.0.2",
         "vite": "^4.3.9",
         "vue-eslint-parser": "^9.3.1",
         "vue-tsc": "^1.4.2"
     },
-    "editConfig": {
+    "eslintConfig": {
         "root": true,
         "env": {
-            "browser": true,
-            "node": true
+            "browser": true
         },
+        "parser": "vue-eslint-parser",
         "parserOptions": {
-            "ecmaVersion": 2021,
-            "sourceType": "module"
+            "project": [
+                "./tsconfig.json"
+            ],
+            "parser": {
+                "js": "@babel/eslint-parser",
+                "jsx": "@babel/eslint-parser",
+                "ts": "@typescript-eslint/parser",
+                "tsx": "@typescript-eslint/parser"
+            }
         },
         "extends": [
-            "eslint:recommended",
-            "plugin:@typescript-eslint/recommended",
-            "plugin:vue/vue3-recommended"
+            "alloy",
+            "alloy/vue",
+            "alloy/typescript"
         ],
-        "plugins": [
-            "@typescript-eslint",
-            "vue"
-        ],
-        "rules": {},
         "overrides": [
             {
-                "files": [
-                    "*.ts",
-                    "*.tsx"
-                ],
-                "parser": "@typescript-eslint/parser",
-                "parserOptions": {
-                    "ecmaVersion": 2021,
-                    "sourceType": "module",
-                    "project": "./tsconfig.json"
-                }
-            },
-            {
-                "files": [
-                    "*.vue"
-                ],
-                "parser": "vue-eslint-parser",
-                "parserOptions": {
-                    "parser": "@typescript-eslint/parser",
-                    "ecmaVersion": 2021,
-                    "sourceType": "module",
-                    "project": "./tsconfig.json",
-                    "extraFileExtensions": [
-                        ".vue"
-                    ]
-                }
+              "files": [
+                "*.ts",
+                "*.tsx"
+              ],
+              "parser": "@typescript-eslint/parser",
+              "parserOptions": {
+                "project": [
+                  "./tsconfig.json",
+                  "./tsconfig.node.json"
+                ]
+              },
+              "rules": {
+                "@typescript-eslint/prefer-optional-chain": "off"
+              }
             }
-        ]
+          ],
+        "rules": {
+            "@typescript-eslint/prefer-optional-chain": "off"
+        }
     }
 }

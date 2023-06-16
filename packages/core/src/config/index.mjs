@@ -22,7 +22,7 @@ const createLocalConfigJSON = async () => {
   const data = await getConfigsMap()
   const cwd = process.cwd();
   console.log(cwd);
-  const configPath = path.join(cwd, '/src/json/config.json');
+  const configPath = path.join(cwd, '/bin/json/config.json');
   fs.writeFile(configPath, JSON.stringify(data,null, 2), (err) => {
     if (err) {
       console.error('Error writing JSON file:', err);

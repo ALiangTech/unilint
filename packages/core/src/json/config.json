@@ -4,58 +4,33 @@
     "config": {
       "root": true,
       "env": {
-        "browser": true,
-        "node": true
+        "browser": true
       },
+      "parser": "vue-eslint-parser",
       "parserOptions": {
-        "ecmaVersion": 2021,
-        "sourceType": "module"
-      },
-      "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:vue/vue3-recommended"
-      ],
-      "plugins": [
-        "@typescript-eslint",
-        "vue"
-      ],
-      "rules": {},
-      "overrides": [
-        {
-          "files": [
-            "*.ts",
-            "*.tsx"
-          ],
-          "parser": "@typescript-eslint/parser",
-          "parserOptions": {
-            "ecmaVersion": 2021,
-            "sourceType": "module",
-            "project": "./tsconfig.json"
-          }
-        },
-        {
-          "files": [
-            "*.vue"
-          ],
-          "parser": "vue-eslint-parser",
-          "parserOptions": {
-            "parser": "@typescript-eslint/parser",
-            "ecmaVersion": 2021,
-            "sourceType": "module",
-            "project": "./tsconfig.json",
-            "extraFileExtensions": [
-              ".vue"
-            ]
-          }
+        "project": ["./tsconfig.json"],
+        "parser": {
+          "js": "@babel/eslint-parser",
+          "jsx": "@babel/eslint-parser",
+          "ts": "@typescript-eslint/parser",
+          "tsx": "@typescript-eslint/parser"
         }
-      ]
+      },
+      "extends": ["alloy", "alloy/vue", "alloy/typescript"],
+      "rules": {
+        "@typescript-eslint/prefer-optional-chain": "off"
+      }
     },
     "packages": [
-      "vue-eslint-parser",
-      "eslint",
-      "@typescript-eslint/parser",
-      "eslint-config-alloy"
+      "@babel/core", 
+      "@babel/eslint-parser", 
+      "@typescript-eslint/eslint-plugin", 
+      "@typescript-eslint/parser", 
+      "@vue/eslint-config-typescript", 
+      "eslint", 
+      "eslint-config-alloy", 
+      "eslint-plugin-vue",
+      "vue-eslint-parser"
     ]
   },
   "test": {
