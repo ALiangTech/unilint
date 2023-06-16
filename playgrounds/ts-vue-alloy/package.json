@@ -33,9 +33,6 @@
         },
         "parser": "vue-eslint-parser",
         "parserOptions": {
-            "project": [
-                "./tsconfig.json"
-            ],
             "parser": {
                 "js": "@babel/eslint-parser",
                 "jsx": "@babel/eslint-parser",
@@ -48,24 +45,6 @@
             "alloy/vue",
             "alloy/typescript"
         ],
-        "overrides": [
-            {
-              "files": [
-                "*.ts",
-                "*.tsx"
-              ],
-              "parser": "@typescript-eslint/parser",
-              "parserOptions": {
-                "project": [
-                  "./tsconfig.json",
-                  "./tsconfig.node.json"
-                ]
-              },
-              "rules": {
-                "@typescript-eslint/prefer-optional-chain": "off"
-              }
-            }
-          ],
         "rules": {
             "@typescript-eslint/prefer-optional-chain": "off"
         }
