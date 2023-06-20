@@ -7,9 +7,12 @@ async function writeConfigToPackageJson(config = {}) {
     const cwd = process.cwd();
     if(cwd) {
         const packageJsonPath = path.join(cwd, '/package.json');
-        const data = require(packageJsonPath)
-        const res = await fs.writeFile(packageJsonPath, JSON.stringify(Object.assign(data, config),null, 4) )
-        console.log("配置文件写入成功", res)
+        const res = await fs.readFile(packageJsonPath, { encoding: 'utf8'})
+        const data = res && JSON.parse(res)
+        if(data) {
+            await fs.writeFile(packageJsonPath, JSON.stringify(Object.assign(data, config),null, 4) )
+            console.log("配置文件写入成功")
+        }
     }
 }
 export default writeConfigToPackageJson
