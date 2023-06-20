@@ -1,5 +1,6 @@
 import { exec } from "child_process";
 import { createProgressBar } from './create-progress';
+import existPackage from "./read-package";
 // 执行npm安装命令
 const installPackages = (packages = [], tool = 'npm') => {
   return new Promise((resolve, reject) => {
@@ -16,10 +17,12 @@ const installPackages = (packages = [], tool = 'npm') => {
       }, 1000)
       exec(command, (error) => {
         if (error) {
-          reject(new Error(`安装npm包时出现错误：${error}`))
+          reject(new Error(`安装npm包时出现错误: ${error}`))
         } else {
           bar.tick(100);
-          resolve('npm包安装成功')
+          setTimeout(() => {
+            resolve('npm包安装成功')
+          }, 1500);
         }
         clearInterval(timer)
       });

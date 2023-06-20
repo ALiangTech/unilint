@@ -1,5 +1,6 @@
 {
   "name": "ts-vue-eslint-alloy",
+  "type": "eslint",
   "config": {
     "root": true,
     "env": {

@@ -9,9 +9,7 @@ async function writeConfigToPackageJson(config = {}) {
         const packageJsonPath = path.join(cwd, '/package.json');
         const data = require(packageJsonPath)
         const res = await fs.writeFile(packageJsonPath, JSON.stringify(Object.assign(data, config),null, 4) )
-
-        console.log(res, "res")
+        console.log("配置文件写入成功", res)
     }
 }
-
 export default writeConfigToPackageJson

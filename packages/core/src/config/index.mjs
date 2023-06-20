@@ -32,3 +32,8 @@ const createLocalConfigJSON = async () => {
   })
 }
 createLocalConfigJSON();
+
+
+// "stylelint-config-standard",
+// "stylelint-config-prettier",
+// "stylelint-config-recommended-vue"

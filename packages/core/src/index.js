@@ -2,7 +2,7 @@
 
 import { Command  } from "commander";
 import inquirer from 'inquirer';
-import createEslint from './createEslint.js';
+import createConfig from './createEslint.js';
 export const init = ({ config }) => {
     const createPrompt = () => {
         const keys = Object.keys(config);
@@ -18,12 +18,13 @@ export const init = ({ config }) => {
                 name: "eslint",
                 message: "选择需要生成的eslint类型: ",
                 type: 'list',
-                choices: keys
+                choices: keys.filter(key => key.includes('eslint'))
             },
             {
-                name: "style",
-                message: "是否需要stylelint: ",
-                type: 'confirm',
+                name: "stylelint",
+                message: "选择需要生成的stylelint类型: ",
+                type: 'list',
+                choices: keys.filter(key => key.includes('stylelint'))
             },
         ];
         return inquirer.prompt(questions)
@@ -36,11 +37,16 @@ export const init = ({ config }) => {
         try {
            const answer = await createPrompt();
            const eslintType = answer['eslint'];
+           const stylelintType = answer['stylelint'];
            const tool = answer['tool'];
            if(eslintType) {
               const configData = config[eslintType];
-             createEslint({ type:eslintType, configData, tool });
+             await createConfig({configData, tool, packageName: 'eslint' });
            }
+           if(stylelintType) {
+            const configData = config[stylelintType];
+            await createConfig({ configData, tool ,configField:'stylelint', packageName: 'stylelint'});
+         }
         } catch (error) {
             console.error(error)
         }

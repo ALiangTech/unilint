@@ -1,0 +1,20 @@
+{
+    "name": "css-vue-stylelint",
+    "config": {
+        "root": true,
+        "extends": [
+            "stylelint-config-standard",
+            "stylelint-config-standard-vue",
+            "stylelint-config-prettier"
+        ],
+        "rules": {
+            "declaration-property-value-no-unknown": true
+        }
+    },
+    "packages": [
+        "stylelint",
+        "stylelint-config-standard",
+        "stylelint-config-prettier",
+        "stylelint-config-standard-vue"
+    ]
+}

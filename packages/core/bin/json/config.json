@@ -1,6 +1,7 @@
 {
   "ts-vue-eslint-alloy": {
     "name": "ts-vue-eslint-alloy",
+    "type": "eslint",
     "config": {
       "root": true,
       "env": {
@@ -8,9 +9,6 @@
       },
       "parser": "vue-eslint-parser",
       "parserOptions": {
-        "project": [
-          "./tsconfig.json"
-        ],
         "parser": {
           "js": "@babel/eslint-parser",
           "jsx": "@babel/eslint-parser",
@@ -39,10 +37,24 @@
       "vue-eslint-parser"
     ]
   },
-  "test": {
-    "name": "test",
+  "css-vue-stylelint": {
+    "name": "css-vue-stylelint",
     "config": {
-      "xx": "yy"
-    }
+      "root": true,
+      "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-standard-vue",
+        "stylelint-config-prettier"
+      ],
+      "rules": {
+        "declaration-property-value-no-unknown": true
+      }
+    },
+    "packages": [
+      "stylelint",
+      "stylelint-config-standard",
+      "stylelint-config-prettier",
+      "stylelint-config-standard-vue"
+    ]
   }
 }

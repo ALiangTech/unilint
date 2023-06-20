@@ -14,13 +14,13 @@
     "devDependencies": {
         "@babel/core": "^7.22.5",
         "@babel/eslint-parser": "^7.22.5",
-        "@typescript-eslint/eslint-plugin": "^5.59.11",
-        "@typescript-eslint/parser": "^5.59.11",
+        "@typescript-eslint/eslint-plugin": "^5.60.0",
+        "@typescript-eslint/parser": "^5.60.0",
         "@vitejs/plugin-vue": "^4.1.0",
         "@vue/eslint-config-typescript": "^11.0.3",
-        "eslint": "^8.42.0",
+        "eslint": "^8.43.0",
         "eslint-config-alloy": "^5.0.0",
-        "eslint-plugin-vue": "^9.14.1",
+        "eslint-plugin-vue": "^9.15.0",
         "typescript": "^5.0.2",
         "vite": "^4.3.9",
         "vue-eslint-parser": "^9.3.1",
@@ -47,6 +47,17 @@
         ],
         "rules": {
             "@typescript-eslint/prefer-optional-chain": "off"
+        }
+    },
+    "stylelint": {
+        "root": true,
+        "extends": [
+            "stylelint-config-standard",
+            "stylelint-config-standard-vue",
+            "stylelint-config-prettier"
+        ],
+        "rules": {
+            "declaration-property-value-no-unknown": true
         }
     }
 }
