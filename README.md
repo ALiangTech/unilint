@@ -11,7 +11,7 @@
 ## 快速开始
 
 ```bash
-pnpm add -g unilint
+pnpm add -g lintcore
 ```
 
 ```bash
