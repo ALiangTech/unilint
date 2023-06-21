@@ -4,7 +4,6 @@
         "root": true,
         "extends": [
             "stylelint-config-standard",
-            "stylelint-config-prettier",
             "stylelint-config-standard-vue"
         ],
         "rules": {
@@ -14,7 +13,6 @@
     "packages": [
         "stylelint",
         "stylelint-config-standard",
-        "stylelint-config-prettier",
         "stylelint-config-standard-vue"
     ]
 }
