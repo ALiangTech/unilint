@@ -43,8 +43,7 @@
       "root": true,
       "extends": [
         "stylelint-config-standard",
-        "stylelint-config-standard-vue",
-        "stylelint-config-prettier"
+        "stylelint-config-standard-vue"
       ],
       "rules": {
         "declaration-property-value-no-unknown": true
@@ -53,8 +52,16 @@
     "packages": [
       "stylelint",
       "stylelint-config-standard",
-      "stylelint-config-prettier",
       "stylelint-config-standard-vue"
+    ]
+  },
+  "prettier": {
+    "name": "prettier",
+    "config": {
+      "semi": true
+    },
+    "packages": [
+      "prettier"
     ]
   }
 }

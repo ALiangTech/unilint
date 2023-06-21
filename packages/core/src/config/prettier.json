@@ -1,0 +1,9 @@
+{
+    "name": "prettier",
+    "config": {
+        "semi": true
+    },
+    "packages": [
+        "prettier"
+    ]
+}
