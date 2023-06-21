@@ -4,8 +4,8 @@
         "root": true,
         "extends": [
             "stylelint-config-standard",
-            "stylelint-config-standard-vue",
-            "stylelint-config-prettier"
+            "stylelint-config-prettier",
+            "stylelint-config-standard-vue"
         ],
         "rules": {
             "declaration-property-value-no-unknown": true
