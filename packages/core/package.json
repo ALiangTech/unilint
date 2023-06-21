@@ -1,6 +1,6 @@
 {
   "name": "core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "自动生成配置文件",
   "main": "./dist/index.cjs",
   "exports": {
@@ -12,7 +12,11 @@
   "unbuild": {
     "failOnWarn": false
   },
-  "files": ["bin", "dist", "package.json"],
+  "files": [
+    "bin",
+    "dist",
+    "package.json"
+  ],
   "bin": {
     "un": "./bin/un.js"
   },
@@ -21,7 +25,13 @@
     "json": "node ./src/config/index.mjs",
     "build": "pnpm run json && unbuild"
   },
-  "keywords": ["eslint", "stylelint", "preitter", "vue", "alloy"],
+  "keywords": [
+    "eslint",
+    "stylelint",
+    "preitter",
+    "vue",
+    "alloy"
+  ],
   "author": "AliangTech",
   "license": "ISC",
   "dependencies": {
