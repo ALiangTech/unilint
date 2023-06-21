@@ -1,7 +1,7 @@
 {
-  "name": "core",
+  "name": "unilint",
   "version": "1.0.0",
-  "description": "",
+  "description": "自动生成配置文件",
   "main": "./dist/index.cjs",
   "exports": {
     ".": {
@@ -12,15 +12,17 @@
   "unbuild": {
     "failOnWarn": false
   },
+  "files": ["bin", "dist", "package.json"],
   "bin": {
     "un": "./bin/un.js"
   },
+  "homepage": "https://github.com/ALiangTech/unilint",
   "scripts": {
     "json": "node ./src/config/index.mjs",
     "build": "pnpm run json && unbuild"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["eslint", "stylelint", "preitter", "vue", "alloy"],
+  "author": "AliangTech",
   "license": "ISC",
   "dependencies": {
     "commander": "^10.0.1",
