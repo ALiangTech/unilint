@@ -2,7 +2,7 @@
 
 import { Command } from "commander";
 import inquirer from 'inquirer';
-import createConfig from './createEslint.js';
+import createConfig from './createConfig.js';
 export const init = ({ config }) => {
     const createPrompt = () => {
         const keys = Object.keys(config);
