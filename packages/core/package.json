@@ -1,6 +1,6 @@
 {
   "name": "lintcore",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "自动生成配置文件",
   "main": "./dist/index.cjs",
   "exports": {
