@@ -11,7 +11,7 @@
 ## 快速开始
 
 ```bash
-pnpm add -g lintcore
+pnpm add -g lintcore // or npm install -g lintcore
 ```
 
 ```bash
