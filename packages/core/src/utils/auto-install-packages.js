@@ -6,7 +6,12 @@ const installPackages = (packages = [], tool = 'npm') => {
   return new Promise((resolve, reject) => {
     if (Array.isArray(packages) && packages.length) {
       const packageString = packages.join(" ");
-      const command = `${tool} install --save-dev ${packageString}`;
+      const diffCommand = {
+        "pnpm": "pnpm add",
+        "npm": "npm install",
+        "yarn": "yarn add"
+      }
+      const command = `${diffCommand[tool] } --save-dev ${packageString}`;
       const bar = createProgressBar();
       let i = 1;
       const timer = setInterval(() => {
